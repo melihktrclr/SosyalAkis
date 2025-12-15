@@ -1,0 +1,55 @@
+  /* Ana yazı tipini ve varsayılan renk şemasını tanımla */
+        :root {
+            --color-primary: #3B82F6; /* Mavi */
+            --color-background: #F8FAFC; /* Çok Açık Gri/Beyaz */
+            --color-text: #1F2937; /* Koyu Gri/Siyah */
+        }
+
+        body {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+
+        /* Navigasyon öğeleri için geçiş efekti */
+        .nav-link {
+            transition: all 0.2s;
+        }
+
+        /* Beğeni ve Kaydetme animasyonu */
+        .post-action {
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+        }
+        .post-action:active {
+            transform: scale(0.9);
+        }
+
+        /* Modal Geçişleri */
+        .modal-bg {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .modal-content-box {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .modal-bg.active {
+            opacity: 1;
+        }
+        .modal-bg.active .modal-content-box {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* İçerik Geçişleri (View Transitions) */
+        #content-area {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .content-fading {
+            opacity: 0;
+        }
+        .content-active {
+            opacity: 1;
+        }
